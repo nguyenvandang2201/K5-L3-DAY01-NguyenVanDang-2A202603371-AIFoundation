@@ -1,3 +1,13 @@
+# Bài làm Day 01 — Nguyễn Văn Đăng (2A202603371)
+
+- [Notebook đã chạy và có lời giải](report/individual/day01_lab.ipynb)
+- [Báo cáo cá nhân](report/individual/2A202603371_NguyenVanDang.md)
+- [Kết quả máy đọc được](report/individual/lab1_report.json)
+
+**Trạng thái:** phần ML, DL, embedding và các bài kiểm tra giả lập LLM đã chạy; phần gọi LLM thật và ảnh tính tay đang chờ hoàn tất. AI đã hỗ trợ viết bài và được khai báo trong báo cáo.
+
+---
+
 # Bài thực hành Ngày 1 — Một bài toán, bốn thế hệ AI: Lọc tin nhắn rác (Spam / Ham)
 
 > **Hình thức: CÁ NHÂN** · **Thời lượng:** 2h30 trên Google Colab · **Deadline:** 23h59 (GMT+7) ngày lab, trừ khi coach thông báo khác
