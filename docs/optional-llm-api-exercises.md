@@ -1,6 +1,8 @@
 # Ngày 1 — Bài Tập & Phản Ánh (side lab TUỲ CHỌN)
 
 > Side lab này **không** thuộc điểm chính của Day 01 (xem [RUBRIC.md](../RUBRIC.md) mục Bonus). Model: `gpt-6.1-terra` (lớn) và `gpt-6-luna` (nhỏ). `gpt-4o` / `gpt-4o-mini` bị gỡ khỏi API ngày 14/01/2027 ([nguồn](https://developers.openai.com/api/docs/deprecations)). Tên khoá `gpt4o_*` / `mini_*` trong kết quả là hợp đồng của test, giữ nguyên để tương thích: đọc là "model lớn" / "model nhỏ".
+
+**Bài làm này dùng DeepSeek:** `deepseek-v4-pro` (lớn) và `deepseek-flash` (nhỏ) qua endpoint tương thích OpenAI. Tên khóa kết quả cũ chỉ phục vụ test. Dữ liệu thô của thí nghiệm temperature ở [optional-temperature-results.json](optional-temperature-results.json); các khẳng định thực tế do model tạo chưa được kiểm chứng độc lập.
 ## Nền Tảng LLM API | Phiếu Thực Hành
 
 **Thời lượng:** 1:30 giờ  
@@ -28,7 +30,7 @@ Bạn sẽ thấy output so sánh phản hồi của `gpt-6.1-terra` và `gpt-6-
 Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử dụng prompt **"Hãy kể cho tôi một sự thật thú vị về Việt Nam."** (nhớ gửi `reasoning_effort="none"`: model GPT-6 chỉ nhận `temperature` khi tắt suy luận)
 
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
-Chưa có API key trong phiên chạy, nên chưa có bốn phản hồi để đối chiếu thực nghiệm. Dự đoán: `temperature=0` sẽ ổn định hơn; khi tăng lên 0.5, 1.0 và 1.5, cách diễn đạt và ví dụ có thể đa dạng hơn, nhưng mức thay đổi không nhất thiết tăng đều trong chỉ bốn lần gọi. Cần chạy đủ bốn giá trị và ghi câu trả lời thực tế trước khi kết luận.
+Đã gọi DeepSeek Pro với đúng prompt trên ở bốn giá trị. `temperature=0`, `0.5` và `1.0` đều trả lời về hạt điều với cách diễn đạt khác nhau; `1.5` chuyển sang hang Sơn Đoòng. Mẫu chỉ có một lần gọi cho mỗi mức nên chưa chứng minh tính đa dạng tăng đều theo temperature. Phản hồi ở 0 và 1.5 bị cắt ở giới hạn 256 output token; chi tiết trong tệp JSON.
 
 **Bạn sẽ đặt temperature bao nhiêu cho chatbot hỗ trợ khách hàng, và tại sao?**
 Với chatbot hỗ trợ khách hàng, tôi sẽ bắt đầu ở `temperature=0` để câu trả lời nhất quán với chính sách, rồi đánh giá độ chính xác và mức lặp trước khi điều chỉnh.
@@ -60,5 +62,5 @@ Streaming hữu ích khi phản hồi dài hoặc thời gian tạo nội dung c
 - [x] `retry_with_backoff` đã triển khai và kiểm thử
 - [x] `batch_compare` đã triển khai và kiểm thử
 - [x] `format_comparison_table` đã triển khai và kiểm thử
-- [ ] Thí nghiệm temperature bằng API thật và ghi phản hồi thực tế
+- [x] Thí nghiệm temperature bằng API thật và ghi phản hồi thực tế
 - [x] Sao chép bài làm vào folder `solution` và đặt tên theo quy định

@@ -4,7 +4,7 @@
 - [Báo cáo cá nhân](report/individual/2A202603371_NguyenVanDang.md)
 - [Kết quả máy đọc được](report/individual/lab1_report.json)
 
-**Trạng thái:** phần ML, DL, embedding và các bài kiểm tra giả lập LLM đã chạy; phần gọi LLM thật và ảnh tính tay đang chờ hoàn tất. AI đã hỗ trợ viết bài và được khai báo trong báo cáo.
+**Trạng thái:** phần ML, DL, embedding và LLM DeepSeek đã chạy; 15/15 kiểm tra đạt. Ảnh tính tay viết tay vẫn cần học viên tự làm. AI đã hỗ trợ viết bài và được khai báo trong báo cáo.
 
 ---
 

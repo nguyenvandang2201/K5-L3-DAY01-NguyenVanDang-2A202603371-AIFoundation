@@ -4,9 +4,10 @@ import os
 import time
 from typing import Any, Callable
 
-OPENAI_MODEL = "gpt-6.1-terra"
-OPENAI_MINI_MODEL = "gpt-6-luna"
-COST_PER_1K_OUTPUT_TOKENS = {OPENAI_MODEL: 0.005, OPENAI_MINI_MODEL: 0.0005}
+OPENAI_MODEL = "deepseek-v4-pro"
+OPENAI_MINI_MODEL = "deepseek-flash"
+# Off-peak output rates (USD / 1K tokens), 06/11/2026.
+COST_PER_1K_OUTPUT_TOKENS = {OPENAI_MODEL: 0.00198, OPENAI_MINI_MODEL: 0.0006}
 
 
 def call_openai(
@@ -18,7 +19,8 @@ def call_openai(
 ) -> tuple[str, float]:
     from openai import OpenAI
 
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY"),
+                    base_url="https://api.deepseek.com")
     start = time.perf_counter()
     response = client.chat.completions.create(
         model=model,
@@ -26,7 +28,7 @@ def call_openai(
         reasoning_effort="none",
         temperature=temperature,
         top_p=top_p,
-        max_completion_tokens=max_tokens,
+        max_tokens=max_tokens,
     )
     return response.choices[0].message.content or "", float(time.perf_counter() - start)
 
@@ -56,7 +58,8 @@ def compare_models(prompt: str) -> dict:
 def streaming_chatbot() -> None:
     from openai import OpenAI
 
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY"),
+                    base_url="https://api.deepseek.com")
     history: list[dict[str, str]] = []
     while True:
         prompt = input("You: ").strip()
@@ -69,7 +72,7 @@ def streaming_chatbot() -> None:
             model=OPENAI_MODEL,
             messages=messages,
             reasoning_effort="none",
-            max_completion_tokens=256,
+            max_tokens=256,
             stream=True,
         )
         chunks = []
