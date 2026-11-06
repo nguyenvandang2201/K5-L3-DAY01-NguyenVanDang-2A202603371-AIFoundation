@@ -28,10 +28,10 @@ Bạn sẽ thấy output so sánh phản hồi của `gpt-6.1-terra` và `gpt-6-
 Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử dụng prompt **"Hãy kể cho tôi một sự thật thú vị về Việt Nam."** (nhớ gửi `reasoning_effort="none"`: model GPT-6 chỉ nhận `temperature` khi tắt suy luận)
 
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
-> *Câu trả lời của bạn*
+Chưa có API key trong phiên chạy, nên chưa có bốn phản hồi để đối chiếu thực nghiệm. Dự đoán: `temperature=0` sẽ ổn định hơn; khi tăng lên 0.5, 1.0 và 1.5, cách diễn đạt và ví dụ có thể đa dạng hơn, nhưng mức thay đổi không nhất thiết tăng đều trong chỉ bốn lần gọi. Cần chạy đủ bốn giá trị và ghi câu trả lời thực tế trước khi kết luận.
 
 **Bạn sẽ đặt temperature bao nhiêu cho chatbot hỗ trợ khách hàng, và tại sao?**
-> *Câu trả lời của bạn*
+Với chatbot hỗ trợ khách hàng, tôi sẽ bắt đầu ở `temperature=0` để câu trả lời nhất quán với chính sách, rồi đánh giá độ chính xác và mức lặp trước khi điều chỉnh.
 
 ---
 
@@ -39,26 +39,26 @@ Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử
 Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi người thực hiện 3 lần gọi API, mỗi lần trung bình ~350 token.
 
 **Ước tính xem `gpt-6.1-terra` đắt hơn `gpt-6-luna` bao nhiêu lần cho workload này** (giá 11/2026: terra $1.00 / $5.00, luna $0.10 / $0.50 mỗi 1M token input / output):
-> *Câu trả lời của bạn*
+Có 10.000 × 3 = 30.000 lượt gọi/ngày, tổng khoảng 10,5 triệu token/ngày. Giá input và output của Terra đều gấp **10 lần** Luna, nên với cùng tỷ lệ token, tổng chi phí cũng gấp 10. Ví dụ nếu mỗi lượt có 250 input + 100 output token: Terra khoảng $22,50/ngày, Luna khoảng $2,25/ngày. Đề không cho tỷ lệ input/output nên không thể suy ra một số USD duy nhất.
 
 **Mô tả một trường hợp mà chi phí cao hơn của `gpt-6.1-terra` là xứng đáng, và một trường hợp `gpt-6-luna` là lựa chọn tốt hơn:**
-> *Câu trả lời của bạn*
+Terra có thể đáng tiền khi cần xử lý yêu cầu phức tạp, nhiều bước và chi phí trả lời sai cao, sau khi đã đo chất lượng trên tập đánh giá riêng. Luna phù hợp hơn cho hỏi đáp ngắn, phân loại đơn giản hoặc các tác vụ số lượng lớn có thể kiểm tra đầu ra tự động.
 
 ---
 
 ### Bài tập 2.3 — Trải Nghiệm Người Dùng với Streaming
 **Streaming quan trọng nhất trong trường hợp nào, và khi nào thì non-streaming lại phù hợp hơn?** (1 đoạn văn)
-> *Câu trả lời của bạn*
+Streaming hữu ích khi phản hồi dài hoặc thời gian tạo nội dung cao: người dùng thấy câu đầu sớm và có thể đọc trong khi phần sau đang sinh. Non-streaming phù hợp cho nhãn phân loại hoặc kết quả ngắn cần kiểm tra toàn bộ trước khi hiển thị; nó cũng đơn giản hơn khi cần xử lý JSON như một đơn vị.
 
 
 ## Danh Sách Kiểm Tra Nộp Bài
-- [ ] Tất cả tests pass: `pytest tests/test_solution.py -v`
-- [ ] `call_openai` đã triển khai và kiểm thử
-- [ ] `call_openai_mini` đã triển khai và kiểm thử
-- [ ] `compare_models` đã triển khai và kiểm thử
-- [ ] `streaming_chatbot` đã triển khai và kiểm thử
-- [ ] `retry_with_backoff` đã triển khai và kiểm thử
-- [ ] `batch_compare` đã triển khai và kiểm thử
-- [ ] `format_comparison_table` đã triển khai và kiểm thử
-- [ ] `exercises.md` đã điền đầy đủ
-- [ ] Sao chép bài làm vào folder `solution` và đặt tên theo quy định 
+- [x] Tất cả tests pass: `pytest tests/test_solution.py -v` (19/19, mock API)
+- [x] `call_openai` đã triển khai và kiểm thử bằng mock
+- [x] `call_openai_mini` đã triển khai và kiểm thử bằng mock
+- [x] `compare_models` đã triển khai và kiểm thử bằng mock
+- [x] `streaming_chatbot` đã triển khai và kiểm thử bằng mock
+- [x] `retry_with_backoff` đã triển khai và kiểm thử
+- [x] `batch_compare` đã triển khai và kiểm thử
+- [x] `format_comparison_table` đã triển khai và kiểm thử
+- [ ] Thí nghiệm temperature bằng API thật và ghi phản hồi thực tế
+- [x] Sao chép bài làm vào folder `solution` và đặt tên theo quy định
