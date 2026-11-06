@@ -11,8 +11,8 @@
 |---|---|
 | [day01_lab.ipynb](day01_lab.ipynb) | Đã chạy và lưu output; 15/15 kiểm tra đạt |
 | [lab1_report.json](lab1_report.json) | Đã tạo; đủ 10 dự đoán và 8 phương án |
-| [hand_calc_notepad.txt](hand_calc_notepad.txt) | Bản tính được AI gõ trong Notepad |
-| [hand_calc.jpg](hand_calc.jpg) | Ảnh chụp bản đánh máy trong Notepad, **không phải chữ viết tay** |
+| [hand_calc_notepad.txt](hand_calc_notepad.txt) | AI chuẩn bị nội dung và bản gốc; học viên sửa tiêu đề, bỏ chú thích |
+| [hand_calc.jpg](hand_calc.jpg) | Học viên chụp lại Notepad, AI cắt ảnh để đúng tên tệp; **không phải chữ viết tay** |
 | [hand_calc_steps.md](hand_calc_steps.md) | Các bước tính do AI chuẩn bị |
 
 Ảnh `hand_calc.jpg` đáp ứng yêu cầu có tệp ảnh và thể hiện các bước tính, nhưng **không đáp ứng tiêu chí ảnh viết tay** trong rubric. Không sử dụng ảnh này để nhận là học viên đã tính tay.
@@ -64,7 +64,7 @@ Encoder+LogReg có F1 test cao nhất 0,980, p95 19,722 ms/tin dưới SLA 50 ms
 | Phần 0–3: ML, DL, embedding | Chưa có bằng chứng học viên tự viết mã hoặc tự giải thích | Viết các hàm TODO, điền dự đoán và lời giải thích, chạy notebook | Các ô kiểm tra đạt; kết quả và output có trong notebook |
 | Phần 4: LLM | Học viên cung cấp khóa API và hạn mức | Viết hàm API/prompt, chạy DeepSeek và phân tích kết quả | Có output gọi API thật, số đo trong JSON; khóa không lưu trong tệp |
 | Phần 5: so sánh, stress test, thử thách | Chưa có bằng chứng học viên tự làm các mục này | Viết mã thử thách, phân tích 50 case, soạn báo cáo | Đối chiếu bảng và output trong notebook |
-| Năm phép tính và ảnh | Học viên yêu cầu dùng Notepad và ảnh chụp | Tính, gõ trong Notepad, chụp ảnh `hand_calc.jpg` | Ảnh ghi rõ là bản đánh máy, không nhận là viết tay |
+| Năm phép tính và ảnh | Học viên yêu cầu dùng Notepad, sửa tiêu đề/chú thích và tự chụp ảnh mới | Tính và gõ bản đầu trong Notepad; cắt ảnh mới thành `hand_calc.jpg` | Ảnh thể hiện chữ gõ Notepad, không nhận là viết tay |
 | Side lab | Chưa có bằng chứng học viên tự lập trình | Viết `solution.py` và làm thí nghiệm temperature | 19/19 test mock đạt; phản hồi thô trong docs |
 
 **AI là tác giả của mã, dự đoán, các phép tính và nội dung phân tích trong lần nộp này.** Việc chạy test xác nhận mã hoạt động trong phạm vi kiểm tra; không chứng minh học viên đã tự viết hoặc hiểu bài.

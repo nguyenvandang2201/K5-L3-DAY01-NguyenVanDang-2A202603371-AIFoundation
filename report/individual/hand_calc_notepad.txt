@@ -1,5 +1,4 @@
-BÀI TÍNH 5 CÂU - BẢN ĐÁNH MÁY TRONG NOTEPAD
-KHÔNG PHẢI ẢNH CHỮ VIẾT TAY
+BÀI TÍNH 5 CÂU
 Nguyễn Văn Đăng | MSSV: 2A202603371 | SEED: 1002
 
 1) BASELINE ACCURACY
@@ -23,5 +22,3 @@ Nguyễn Văn Đăng | MSSV: 2A202603371 | SEED: 1002
    Input: 1.000.000*100 = 100 triệu token -> 100*$0,10 = $10,00.
    Output: 1.000.000*1 = 1 triệu token -> 1*$0,50 = $0,50.
    Tổng chi phí = $10,50/ngày.
-
-Soạn và kiểm tra bằng AI; đây là bản đánh máy, không phải bài viết tay.
