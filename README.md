@@ -4,7 +4,7 @@
 - [Báo cáo cá nhân](report/individual/2A202603371_NguyenVanDang.md)
 - [Kết quả máy đọc được](report/individual/lab1_report.json)
 
-**Trạng thái:** phần ML, DL, embedding và LLM DeepSeek đã chạy; 15/15 kiểm tra đạt. Ảnh tính tay viết tay vẫn cần học viên tự làm. AI đã hỗ trợ viết bài và được khai báo trong báo cáo.
+**Trạng thái:** phần ML, DL, embedding và LLM DeepSeek đã chạy; 15/15 kiểm tra đạt. `hand_calc.jpg` là ảnh chụp bản đánh máy trong Notepad, không phải ảnh viết tay. AI đã thực hiện mã và nội dung phân tích; vai trò của con người và AI được khai báo trong báo cáo.
 
 ---
 

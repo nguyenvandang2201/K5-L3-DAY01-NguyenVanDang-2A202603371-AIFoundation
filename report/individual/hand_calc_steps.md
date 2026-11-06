@@ -1,6 +1,6 @@
 # Các bước tính để tự viết lên giấy
 
-Tệp này do AI tạo để đối chiếu phép tính. Bài nộp theo rubric vẫn cần ảnh `hand_calc.jpg` do học viên tự viết và chụp.
+Tệp này do AI tạo để đối chiếu phép tính. Ảnh `hand_calc.jpg` hiện là ảnh chụp bản AI gõ trong Notepad, không phải ảnh viết tay. Muốn đáp ứng rubric, học viên cần tự viết và chụp ảnh thay thế.
 
 1. **Baseline accuracy:** Sau bỏ trùng có 4.516 ham trên 5.169 tin. Luôn đoán ham thì accuracy = 4.516 / 5.169 = 0,8737 → **0,87**.
 2. **Sigmoid tại 0:** σ(0) = 1 / (1 + e⁰) = 1 / 2 = **0,50**.
